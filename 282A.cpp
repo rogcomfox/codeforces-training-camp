@@ -1,5 +1,3 @@
-// Way Too Long Words (71A)
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,17 +5,18 @@ using namespace std;
 
 int main(){
     int count;
+    int x = 0;
     cin >> count;
     vector<string> words(count);
     for(int i = 0; i < count; ++i){
         cin >> words[i];
     }
     for(const auto& element : words){
-        int len = element.size();
-        if(len <= 10){
-            cout << element << endl;
+        if(element[1] == '+'){
+            ++x;
         } else {
-            cout << element[0] + to_string(len - 2) + element[len - 1]<< endl;
+            --x;
         }
     }
+    cout << x << endl;
 }
